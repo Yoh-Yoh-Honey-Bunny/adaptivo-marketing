@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
         entry.target.classList.add('visible');
       }
     });
-  }, { threshold: 0.05 });
+  }, { threshold: 0.20 });
 
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 });
