@@ -1,4 +1,8 @@
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, 50);
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
