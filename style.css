@@ -57,33 +57,6 @@ header.scrolled {
 }
 
 
-/* Logo */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  flex-shrink: 0;
-}
-
-.logo-img {
-  height: 34px;
-  width: auto;
-}
-
-.logo-text {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 1.35rem;
-  color: var(--text);
-  letter-spacing: -0.02em;
-}
-
-.logo-accent {
-  color: var(--accent);
-}
-
-
 /* Nav */
 .nav {
   display: flex;
@@ -182,8 +155,8 @@ header.scrolled {
 }
 
 .hero-tagline h1 {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(2.4rem, 4.5vw, 4rem);
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2.4rem, 4.5vw, 6rem);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.03em;
