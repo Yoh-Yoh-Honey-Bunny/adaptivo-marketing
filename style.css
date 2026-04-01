@@ -599,15 +599,72 @@ footer {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
-  .nav {
-    display: none;
-  }
 
+  /* Header */
   header {
     padding: 0 1.5rem;
   }
+  .nav {
+    display: none;
+  }
+  .btn-kontakt {
+    display: none;
+  }
 
-  section:not(.hero) {
-    padding: 4rem 1.5rem;
+  /* Hero */
+  .hero {
+    padding: calc(var(--header-h) + 2rem) 6% 4rem;
+    gap: 4rem;
+  }
+  .hero-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .hero-logo {
+    max-width: 180px;
+  }
+  .hero-bottom {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /* Leistungen */
+  #leistungen {
+    padding: 4rem 6%;
+  }
+  .leistungen-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Über uns */
+  #ueber-uns {
+    padding: 4rem 6%;
+  }
+  .ueber-uns-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Vorteile */
+  #vorteile {
+    padding: 4rem 6%;
+  }
+
+  /* Kontakt */
+  #kontakt {
+    padding: 4rem 6%;
+  }
+  .kontakt-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
   }
 }
