@@ -1,0 +1,12 @@
+{
+  "person1": {
+    "name": "Johannes Stinhöfer",
+    "rolle": "Website & Technik",
+    "bio": "Johannes studiert Lehramt und weiß, wie man komplizierte Dinge einfach erklärt – das gilt auch für Websites. Was als Hobby begann, ist heute seine Leidenschaft: kleinen Unternehmen in Darmstadt zu einer professionellen Online-Präsenz verhelfen. Unkompliziert, persönlich und auf Augenhöhe."
+  },
+  "person2": {
+    "name": "Neele Scholz",
+    "rolle": "Social Media & Strategie",
+    "bio": "Neele studiert Psychologie in Darmstadt und versteht, was Menschen bewegt – und was sie zum Klicken bringt. Mit ihrem Gespür für Zielgruppen und ihrer Begeisterung für Social Media sorgt sie dafür, dass dein Unternehmen online nicht nur sichtbar, sondern auch überzeugend wirkt."
+  }
+}
