@@ -4,14 +4,8 @@ const CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
 module.exports = async function handler(req, res) {
   const { code } = req.query;
 
-  // Temporäres Debugging
   if (!code) {
-    return res.status(400).send(`
-      Kein Code erhalten.<br><br>
-      URL: ${req.url}<br>
-      Query: ${JSON.stringify(req.query)}<br>
-      Method: ${req.method}
-    `);
+    return res.status(400).send('Kein Code erhalten.');
   }
 
   const response = await fetch('https://github.com/login/oauth/access_token', {
@@ -26,7 +20,10 @@ module.exports = async function handler(req, res) {
     return res.status(401).send(`Auth Fehler: ${data.error_description}`);
   }
 
-  const token = data.access_token;
+  const message = JSON.stringify({
+    token: data.access_token,
+    provider: 'github'
+  });
 
   return res.send(`
     <!DOCTYPE html>
@@ -34,14 +31,9 @@ module.exports = async function handler(req, res) {
     <body>
     <script>
       (function() {
-        function receiveMessage(e) {
-          window.opener.postMessage(
-            'authorization:github:success:' + JSON.stringify({ token: '${token}', provider: 'github' }),
-            e.origin
-          );
-        }
-        window.addEventListener('message', receiveMessage, false);
-        window.opener.postMessage('authorizing:github', '*');
+        const msg = 'authorization:github:success:' + ${JSON.stringify(message)};
+        window.opener.postMessage(msg, '*');
+        window.close();
       })();
     </script>
     </body>
