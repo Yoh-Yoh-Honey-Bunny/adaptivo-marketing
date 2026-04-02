@@ -4,8 +4,14 @@ const CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
 module.exports = async function handler(req, res) {
   const { code } = req.query;
 
+  // Temporäres Debugging
   if (!code) {
-    return res.status(400).send('Kein Code erhalten.');
+    return res.status(400).send(`
+      Kein Code erhalten.<br><br>
+      URL: ${req.url}<br>
+      Query: ${JSON.stringify(req.query)}<br>
+      Method: ${req.method}
+    `);
   }
 
   const response = await fetch('https://github.com/login/oauth/access_token', {
