@@ -2,7 +2,7 @@ backend:
   name: github
   repo: Yoh-Yoh-Honey-Bunny/adaptivo-marketing
   branch: main
-  base_url: https://adaptivo-marketing.vercel.app
+  base_url: https://adaptivo-marketing.de
   auth_endpoint: /api/auth
 
 media_folder: assets
