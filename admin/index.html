@@ -5,6 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adaptivo CMS</title>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    window.CMS_MANUAL_INIT = true;
+  </script>
 </head>
-<body></body>
+<body>
+<script>
+  CMS.init({
+    config: {
+      backend: {
+        name: 'github',
+        repo: 'Yoh-Yoh-Honey-Bunny/adaptivo-marketing',
+        branch: 'main',
+        base_url: 'https://adaptivo-marketing.de',
+        auth_endpoint: '/api/auth'
+      },
+      media_folder: 'assets',
+      collections: [
+        {
+          name: 'ueber-uns',
+          label: 'Über uns',
+          files: [
+            {
+              name: 'ueber-uns',
+              label: 'Team',
+              file: 'content/ueber-uns.json',
+              fields: [
+                {
+                  label: 'Person 1',
+                  name: 'person1',
+                  widget: 'object',
+                  fields: [
+                    { label: 'Name', name: 'name', widget: 'string' },
+                    { label: 'Rolle', name: 'rolle', widget: 'string' },
+                    { label: 'Bio', name: 'bio', widget: 'text' }
+                  ]
+                },
+                {
+                  label: 'Person 2',
+                  name: 'person2',
+                  widget: 'object',
+                  fields: [
+                    { label: 'Name', name: 'name', widget: 'string' },
+                    { label: 'Rolle', name: 'rolle', widget: 'string' },
+                    { label: 'Bio', name: 'bio', widget: 'text' }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  });
+</script>
+</body>
 </html>
