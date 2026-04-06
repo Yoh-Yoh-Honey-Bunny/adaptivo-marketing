@@ -123,21 +123,19 @@ header.scrolled {
   display: flex;
   flex-direction: column;
   padding: calc(var(--header-h) + 4rem) 6rem 6rem;
-  gap: 5rem;
+  gap: 8rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding-left: 6rem;
-  padding-right: 6rem;
 }
 
 .hero-top {
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   gap: 4rem;
 }
 
 .hero-logo {
-  max-width: 260px;
+  max-width: 280px;
   flex-shrink: 0;
 }
 
@@ -208,19 +206,6 @@ header.scrolled {
   display: block;
 }
 
-.hero-top {
-  justify-content: center;
-}
-
-.hero-logo {
-  max-width: 280px;
-}
-
-.hero {
-  gap: 8rem;
-}
-
-
 /* ── LEISTUNG ── */
 
 #leistungen {
@@ -284,7 +269,10 @@ header.scrolled {
   font-size: 0.95rem;
 }
 
-#leistungen h2 {
+#leistungen h2,
+#ueber-uns h2,
+#vorteile h2,
+#kontakt h2 {
   font-family: 'Syne', sans-serif;
   font-size: clamp(1.8rem, 4vw, 2.6rem);
   font-weight: 700;
@@ -297,13 +285,6 @@ header.scrolled {
   padding: 6rem 6rem;
   max-width: 1200px;
   margin: 0 auto;
-}
-
-#ueber-uns h2 {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
 }
 
 .ueber-uns-grid {
@@ -360,13 +341,6 @@ header.scrolled {
   margin: 0 auto;
 }
 
-#vorteile h2 {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
 .vorteile-list {
   display: flex;
   flex-direction: column;
@@ -412,13 +386,6 @@ header.scrolled {
   padding: 6rem 6rem;
   max-width: 1200px;
   margin: 0 auto;
-}
-
-#kontakt h2 {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
 }
 
 .kontakt-inner {
@@ -494,6 +461,28 @@ header.scrolled {
 .form-group input::placeholder,
 .form-group textarea::placeholder {
   color: var(--muted);
+}
+
+.form-feedback {
+  display: none;
+  padding: 0.9rem 1.2rem;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.form-feedback.success {
+  display: block;
+  background: #edfbf3;
+  color: #1a7f4b;
+  border: 1px solid #a8e6c3;
+}
+
+.form-feedback.error {
+  display: block;
+  background: #fff0f0;
+  color: #c0392b;
+  border: 1px solid #f5c6c6;
 }
 
 /* ── Footer ── */

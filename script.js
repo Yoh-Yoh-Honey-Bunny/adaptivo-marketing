@@ -31,6 +31,40 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileNav.setAttribute('aria-hidden', !isOpen);
   });
 
+  // Kontaktformular mit Feedback
+  const form = document.querySelector('.kontakt-form');
+  const feedback = form.querySelector('.form-feedback');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'Wird gesendet…';
+    feedback.className = 'form-feedback';
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+
+      if (res.ok) {
+        feedback.classList.add('success');
+        feedback.textContent = 'Danke für deine Nachricht! Wir melden uns so schnell wie möglich bei dir.';
+        form.reset();
+        btn.textContent = 'Nachricht gesendet ✓';
+      } else {
+        throw new Error();
+      }
+    } catch {
+      feedback.classList.add('error');
+      feedback.textContent = 'Etwas hat nicht geklappt. Bitte versuch es nochmal oder schreib uns direkt an info@adaptivo-marketing.de.';
+      btn.disabled = false;
+      btn.textContent = 'Nachricht senden →';
+    }
+  });
+
   // Menü schließen wenn ein Link geklickt wird
   mobileNav.querySelectorAll('.mobile-nav-link').forEach(link => {
     link.addEventListener('click', () => {
