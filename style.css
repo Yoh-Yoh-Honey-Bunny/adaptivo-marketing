@@ -581,6 +581,7 @@ footer {
 
 .burger span {
   display: block;
+  width: 100%;
   height: 2px;
   background: var(--text);
   border-radius: 2px;
